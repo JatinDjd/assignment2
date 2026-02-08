@@ -1,0 +1,23 @@
+name: Lab2 CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show repo files
+        run: |
+          echo "Listing files..."
+          ls -la
+
+      - name: Simple success check
+        run: |
+          echo "GitHub Actions is working ✅"
